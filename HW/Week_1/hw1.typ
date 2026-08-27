@@ -118,8 +118,7 @@
     [$x, y$ are even integers and $x + y$ is not divisible by $4$.],
     [
       Let $x = 2$ and $y = 0$. In this case $x + y = 2 + 0 = 2$, which is not divisible by
-      $4$. Therefore the conjecture is false; the statement would only be true for even
-      integers $x, y$ that are greater than or equal to $2$.
+      $4$. Therefore the conjecture is false.
     ],
   )
 ]
@@ -132,7 +131,7 @@
     [$exists x in ZZ$, $x^2$ is not odd or $x^3 - 1$ is not divisible by $4$.],
     [$exists n in ZZ$ such that $forall k in ZZ$, $n != 2k and n != 2k + 1$.],
     [$forall r in RR$, $r<=1 and r>=2$.],
-    [$forall r in RR$, $r$ is less than or equal to 2 and less than or equal to 1.],
+    [$forall r in RR$, $r$ is less than or equal to 2 and greater than or equal to 1.],
     [All functions are differentiable at 0 and continuous at 0.]
   )
 ]
@@ -144,7 +143,7 @@
     [$forall n=6a | n = 2k and n != 4b$. ${n, a, k, b in NN}$.],
     [$exists n= 6a | n != 2k or n = 4b$. ${n, a, k, b in NN}$],
     [Let's assume that $n=6a | n,a in NN$, i.e, $n$ is an integer multiple of 6. Our goal is to establish that every $n in NN$ is 
-  divisible by $2$, ergo even, and not every $n$ is a multiple of $4$, i.e, $n != 4b$,$b in NN$. Let us rewrite $n$ by factoring a 2, in which case we get $n=2(3a)$. Here $3a$ is an integer and thus we have expressed $n$ as integer multiple of $2$, $therefore$ by definition it is even. Next, we want to prove that not every $n$ is a multiple of $4$, which here we will prove by contradiction. Let $n$ be a multiple of 6 and 4. Thus $6a=4b$, remember $a$ and $b$ are both integers, however if we divide the RHS by 4 or the LHS by 6, we get following fractions; $a= 4/6b$ or $b=6/4b$ which contradicts the operations of the integers, in that they are closed under multiplication. Since the negation leads to contradtion, the original statement must be true. *QED*],
+  divisible by $2$, ergo even, and not every $n$ is a multiple of $4$, i.e, $n != 4b$,$b in NN$. Let us rewrite $n$ by factoring a 2, in which case we get $n=2(3a)$. Here $3a$ is an integer and thus we have expressed $n$ as integer multiple of $2$, $therefore$ by definition it is even. Next, we want to prove that not every $n$ is a multiple of $4$, which here we will prove by contradiction. Let $n$ be a multiple of 6 and 4. Thus $6a=4b$, remember $a$ and $b$ are both integers, however if we divide the RHS by 4 or the LHS by 6, we get following fractions; $a= 4/6b$ or $b=6/4b$ which contradicts the operations of the integers, in that they are closed under multiplication. Since the negation leads to contradiction, the original statement must be true. *QED*],
   )
 ]
 = Section 1.3
@@ -155,5 +154,46 @@
     [P : $forall n,a,b in NN$ $n = 2a or n = 2b + 1 $ . \ $~P$ : $exists n,a,b in NN$ | $n != 2a and n != 2b + 1$.],
     [P : $forall f$ that is differentiable at 0, $f$ is continuous at 0. \ $~P$ : $exists f$ that is differentiable at 0 such that $f$ is not continuous at 0.],
     [P : $forall x in RR$, $exists y in RR$ such that $sqrt(x) = y$. \ $~P$ : $exists x in RR$ such that $forall y in RR$, $sqrt(x) != y$]
+  )
+]
+
+#question("7")[
+  #given("Conjecture", [The sum of the squares of three consecutive integers is even.])
+  #v(0.6em)
+  #parts(
+    [$forall x, a in NN$, $x^2 + (x+1)^2 + (x+2)^2 = 2a$. ${a, x in NN}$.],
+    [$exists x, a in NN$ | $x^2 + (x+1)^2 + (x+2)^2 != 2a$. ${a, x in NN}$.],
+    [Counter-example: Let $x=0 therefore$ $0^2 + 1^2 + 2^2 = 5$, $5 != 2a$.]
+  )
+]
+
+= Section 1.4
+
+#question("4")[
+  #parts(
+    [*Contrapositive*: If the food didn't spoil, then the power did not go off. \
+     *Converse*: If the food spoils, then the power went off. ],
+    [*Contrapositive*: If the door is locked, then the light is not on. \
+     *Converse*: If the door is not locked, then the light is on. ],
+    [*Contrapositive*: If we didn't start the test, then it is not 9 A.M. \
+     *Converse*: If we started the test, then it is 9 A.M. ],
+  )
+]
+
+#question("5")[
+  #given("Statement", [If $x^2 - x - 2 = 0 arrow.r x = -1 or x =2$.])
+  #v(0.6em)
+  #parts(
+    [*Contrapositive*: If $(x != -1 and x != 2) arrow.r x^2 - x - 2 != 0$. \
+     *Converse*: If $(x = 1 or x = 2) arrow.r x^2 - x - 2 = 0$.],
+  )
+]
+
+#question("7")[
+  #given("Statement", [ If $f$ is differentiable at $0$, then $f$ is continuous at $0$.])
+  #v(0.6em)
+  #parts(
+    [*Contrapositive*: If $f$ is not continuous at 0, then $f$ is not differentiable at $0$. \
+     *Converse*: If $f$ is continuous at $0$, then $f$ is differentiable at $0$. ],
   )
 ]
