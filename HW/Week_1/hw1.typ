@@ -142,8 +142,7 @@
   #parts(
     [$forall n=6a | n = 2k and n != 4b$. ${n, a, k, b in NN}$.],
     [$exists n= 6a | n != 2k or n = 4b$. ${n, a, k, b in NN}$],
-    [Let's assume that $n=6a | n,a in NN$, i.e, $n$ is an integer multiple of 6. Our goal is to establish that every $n in NN$ is 
-  divisible by $2$, ergo even, and not every $n$ is a multiple of $4$, i.e, $n != 4b$,$b in NN$. Let us rewrite $n$ by factoring a 2, in which case we get $n=2(3a)$. Here $3a$ is an integer and thus we have expressed $n$ as integer multiple of $2$, $therefore$ by definition it is even. Next, we want to prove that not every $n$ is a multiple of $4$, which here we will prove by contradiction. Let $n$ be a multiple of 6 and 4. Thus $6a=4b$, remember $a$ and $b$ are both integers, however if we divide the RHS by 4 or the LHS by 6, we get following fractions; $a= 4/6b$ or $b=6/4b$ which contradicts the operations of the integers, in that they are closed under multiplication. Since the negation leads to contradiction, the original statement must be true. *QED*],
+    [Counterexample: $12 = 6 dot 2 = 4 dot 3$.],
   )
 ]
 = Section 1.3
