@@ -140,8 +140,8 @@
   #given("Conjecture", [Every multiple of 6 is even and is not a multiple of 4.])
   #v(0.6em)
   #parts(
-    [$forall n=6a | n = 2k and n != 4b$. ${n, a, k, b in NN}$.],
-    [$exists n= 6a | n != 2k or n = 4b$. ${n, a, k, b in NN}$],
+    [$forall n=6a | n = 2k and n != 4b$. ${n, a, k, b in ZZ}$.],
+    [$exists n= 6a | n != 2k or n = 4b$. ${n, a, k, b in ZZ}$],
     [Counterexample: $12 = 6 dot 2 = 4 dot 3$.],
   )
 ]
@@ -150,7 +150,7 @@
 #question("1")[
   #parts(
     [P : $forall$ Hexagons $H$, $H$ has $6$ sides. \ $~P$ : $exists H$ | $H$ does not have $6$ sides.],
-    [P : $forall n,a,b in NN$ $n = 2a or n = 2b + 1 $ . \ $~P$ : $exists n,a,b in NN$ | $n != 2a and n != 2b + 1$.],
+    [P : $forall n,a,b in ZZ$ $n = 2a or n = 2b + 1 $ . \ $~P$ : $exists n,a,b in ZZ$ | $n != 2a and n != 2b + 1$.],
     [P : $forall f$ that is differentiable at 0, $f$ is continuous at 0. \ $~P$ : $exists f$ that is differentiable at 0 such that $f$ is not continuous at 0.],
     [P : $forall x in RR$, $exists y in RR$ such that $sqrt(x) = y$. \ $~P$ : $exists x in RR$ such that $forall y in RR$, $sqrt(x) != y$]
   )
@@ -160,8 +160,8 @@
   #given("Conjecture", [The sum of the squares of three consecutive integers is even.])
   #v(0.6em)
   #parts(
-    [$forall x, a in NN$, $x^2 + (x+1)^2 + (x+2)^2 = 2a$. ${a, x in NN}$.],
-    [$exists x, a in NN$ | $x^2 + (x+1)^2 + (x+2)^2 != 2a$. ${a, x in NN}$.],
+    [$forall x, a in ZZ$, $x^2 + (x+1)^2 + (x+2)^2 = 2a$. ${a, x in ZZ}$.],
+    [$exists x, a in ZZ$ | $x^2 + (x+1)^2 + (x+2)^2 != 2a$. ${a, x in ZZ}$.],
     [Counter-example: Let $x=0 therefore$ $0^2 + 1^2 + 2^2 = 5$, $5 != 2a$.]
   )
 ]
