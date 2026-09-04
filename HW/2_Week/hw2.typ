@@ -133,4 +133,22 @@ Note: Here '...' means sequential integers from $a$ to $b$.
     [$overline(A) inter overline(B)={0,6,7,10,...,20}$],
   )
 ]
-
+#question("14B")[
+  #given("Statement", [Let $A$ and $B$ be sets. Prove the following: $A union (A inter B) = A$])
+  = Proof:
+  Let $A$ and $B$ be sets and assume $x in A union(A inter B)$. We must show that: \
+  I.) $A union (A inter B) subset.eq  A$ and II.) $(A subset.eq A union (A inter B))$ \
+  === Part I: \
+  Let $x in A union (A inter B)$. We must show that $x in A$ for the definition of a subset.
+  Since $x in A union (A inter B)$ by assumption, $x in A or (x in A and x in B)$, which
+  necessitates that $x in A$ in both cases, thus we have shown $forall x in A union (A inter B), x in A$.
+  === Part II: \
+  Let $x in A$. We must also show that $x in A union (A inter B)$ for the definition of a subset.
+  By assumption $x in A$ and as per Part I, $x in  A union (A inter B)$ necessitates that $x in A therefore$
+  $forall x in A, x in A union (A inter B)$. \
+  Thus $A union (A inter B) = A$. $qed$
+]
+#question("17")[
+  #given("Statement", [Let A, B, and C bet sets.])
+  = Proof:
+]
