@@ -150,5 +150,20 @@ Note: Here '...' means sequential integers from $a$ to $b$.
 ]
 #question("17")[
   #given("Statement", [Let A, B, and C bet sets.])
+  #parts(
+  [  #given("Conjecture", [$ A subset.eq B union C arrow.r A subset.eq B or A subset.eq C$])
   = Proof:
+  Let $A,B,C$ be sets such that $A subset.eq B union C$. \
+  We want to show that $A subset.eq B or A subset.eq C$, i.e, $forall x in A, x in B or x in C$, 
+  by the definition of subset and union. \
+  By assumption since $A subset.eq B union C$, it follows that $forall x in A, x in B or in C$, as per the definition of union. \
+  === Case 1: $ x in B$
+  If we assume $x in B$ by the definition of union, and since $x in A$ by our initial assumption, it must follow that 
+  $A subset.eq B$ which would satisfy one of the conditions of our conclusion, which is what we wanted to demonstrate.
+  === Case 2: $ x in C$
+  Similar behavior to the case above. \
+  Therefore, we have shown that $A subset.eq B union C arrow.r A subset.eq B or A subset.eq C$. $qed$
+],
+[$A subset.eq.not B and A subset.eq.not C arrow.r A subset.eq.not $]
+  )
 ]
