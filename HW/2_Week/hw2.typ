@@ -180,15 +180,31 @@ Note: Here '...' means sequential integers from $a$ to $b$.
 ]
   )
 ]
-// TODO: Need to finish this problem.
 #question("22B")[
 #given("Conjecture", [$(A union B) - (A inter B) = (A-B) union (B-A)$])
 = Proof:
-=== Part 1: Prove $(A union B) - (A inter B) subset.eq (A-B) union (B-A)$
+== Part 1: Prove $(A union B) - (A inter B) subset.eq (A-B) union (B-A)$
 Let $x in (A union B) - (A inter B)$. \
 We want to show $x in (A-B) union (B-A)$. \
 By assumption:  $x in (A or B) and x in.not (A and B)$ by definition of union and complement. \
-Using De Morgan: .
+Using De Morgan: $x in (A or B) and (x in.not A or x in.not B)$.
+This creates $2$ cases for us: \
+*Case 1*: $x in A and x in.not B$.\
+If $x in A and x in.not B$, it would also be in $(A-B) union (B-A)$, as by the definition of complement and union:
+$x in A and x in.not B = (A-B)$ and thus $x in (A-B) union (B-A)$. \
+*Case 2*: $x in B and x in.not A$.\
+Same as case above however now we are working with $x in B and x in.not A = x in (B-A)$.
+== Part 2: Prove $(A-B) union (B-A) subset.eq (A union B) - (A inter B)$
+Let $x in (A-B) union (B-A)$. \
+We want to show $x in (A union B) - (A inter B)$. \
+Which again gives us $2$ cases:\
+*Case 1*: $x in (A-B)$.\
+Assume $x in (A-B)$. \
+Since $x in A$ it follows then that $x in (A union B)$ by the definition of union. \
+*Case 2*: $x in (B-A)$.\
+Since $x in B$ it also follows that $x in (A union B)$ by definition of union. \
+--- \
+Thus we have shown that $(A union B) - (A inter B) = (A-B) union (B-A)$. $qed$
 ]
 
 #question("23")[
@@ -215,7 +231,16 @@ By assumption, $A subset.eq A inter B$, meaning $forall x in A, x in A and x in 
 
 Therefore: $A subset.eq B arrow.l.r.double A inter B = A$. $qed$
 ]
-// TODO: Need to finish this problem.
 #question("25A")[
 #given("Conjecture", [$A - (B union C) = (A -B) inter (A-C)$])
+= Proof:
+_Note: For this proof, I am proving the sets are equal by their logical operators, moreover since the proof is bidirectional, it works both ways._ \
+Assume $x in A - (B union C)$. \
+We want to show $x in (A-B) inter (A-C)$. \
+By assumption: $x in A and (x in.not B and x in.not C)$ using De Morgan's Law. \
+By distributive property, rewrite our assumption as $(x in A and x in.not B) and (x in A and x in.not C)$. \
+And going back using the definition of complement and intersection: $(A - B) inter (A-C)$. \
+Since every step in the proof was biconditional, our argument works in both direction of proving the equality of the sets. \
+--- \ 
+Thus $A - (B union C) = (A -B) inter (A-C)$. $qed$
 ]
