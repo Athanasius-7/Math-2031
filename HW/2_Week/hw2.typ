@@ -164,6 +164,58 @@ Note: Here '...' means sequential integers from $a$ to $b$.
   Similar behavior to the case above. \
   Therefore, we have shown that $A subset.eq B union C arrow.r A subset.eq B or A subset.eq C$. $qed$
 ],
-[$A subset.eq.not B and A subset.eq.not C arrow.r A subset.eq.not $]
+[$A subset.eq.not B and A subset.eq.not C arrow.r A subset.eq.not B inter C $],
+[#given("Conjecture", [$A subset.eq B or A subset.eq C arrow.r A subset.eq B union C$])
+  = Proof:
+  Let $A,B,C$ be sets such that $A subset.eq B or A subset.eq C$. \
+  We want to show that $A subset.eq B union C$, i.e, $forall x in A, x in (B union C)$, 
+  by the definition of subset and union. \
+  By assumption since $A subset.eq B or A subset.eq C$, it follows that $forall x in A, x in B or in C$. \
+  === Case 1: $A subset.eq B$
+  If $A subset.eq B$, it would mean that $forall x in A, x in B$. \
+  We want to show by the definition of union, $x in (B union C)$. \
+  Since we assumed $A subset.eq B$, it must follow that $x in B$, moreover it must also be in $B union C$ as by definition of union, $x in B or x in C$.
+  === Case 2: $A subset.eq C$
+  Same steps as above, now instead for $C$. Therefore, if $A subset.eq B or A subset.eq C$ it must follow that $A subset.eq B union C$. $qed$
+]
   )
+]
+// TODO: Need to finish this problem.
+#question("22B")[
+#given("Conjecture", [$(A union B) - (A inter B) = (A-B) union (B-A)$])
+= Proof:
+=== Part 1: Prove $(A union B) - (A inter B) subset.eq (A-B) union (B-A)$
+Let $x in (A union B) - (A inter B)$. \
+We want to show $x in (A-B) union (B-A)$. \
+By assumption:  $x in (A or B) and x in.not (A and B)$ by definition of union and complement. \
+Using De Morgan: .
+]
+
+#question("23")[
+#given("Conjecture", [$A subset.eq B arrow.l.r.double A inter B = A$])
+= Proof:
+== Part 1: $A subset.eq B arrow.r A inter B = A$ 
+Assume $A subset.eq B$. \
+We want to show that $A inter B = A$, i.e, $A inter B subset.eq A and A subset.eq A inter B$. \
+=== 1A) Proving $A inter B subset.eq A$
+Assume $x in A inter B$, meaning $x in A and x in B$ by definition of intersection. \ 
+We want to show that $x in A$ which is true by our assumption, thus $A inter B subset.eq A$.
+=== 1B) Proving $A subset.eq A inter B$
+Let $x in A$. We want to show that $x in A inter B$. By the definition of intersection, $x in A and x in B$. \
+Moreover, we assumed that $A subset.eq B$, therefore also $x in B$. \
+Thus $A subset.eq A inter B$, which is what we wanted to show.
+== Part 2: $A inter B = A arrow.r A subset.eq B$ 
+Assume $A inter B = A$. \
+We want to show $A subset.eq B$. \
+By assumption, $A inter B = A$ would mean that $A inter B subset.eq A and A subset.eq A inter B$. \
+We want to show that $forall x in A, x in B$. \
+By assumption, $A subset.eq A inter B$, meaning $forall x in A, x in A and x in B$, thus $x in B$ would necessitate that $A subset.eq B$, which is what we wanted to show. \
+
+---
+
+Therefore: $A subset.eq B arrow.l.r.double A inter B = A$. $qed$
+]
+// TODO: Need to finish this problem.
+#question("25A")[
+#given("Conjecture", [$A - (B union C) = (A -B) inter (A-C)$])
 ]
