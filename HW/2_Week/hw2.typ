@@ -91,12 +91,12 @@
 
 
 #question("21")[
-  #given("Statement", [Let $A$ and $B$ be sets contained in universal set $U$. Which one(s) of the followig statements are equivalent to the statement $A subset.eq B?$ Give reasons for your answers. ])
+  #given("Statement", [Let $A$ and $B$ be sets contained in universal set $U$. Which one(s) of the following statements are equivalent to the statement $A subset.eq B?$ Give reasons for your answers. ])
   #v(0.6em)
   #parts(
-    [$forall x in U, x in A and x in B.$ True by definition of being a subset.],
-    [$forall x in U, x in.not B arrow.r x in.not A.$ True, since $A$ is a subset of $B$, if an element does not exist within $B$ then we must conclude that it does not also exist within $A$.],
-    [$exists x in U | x in A and x in B.$ True by definition, since $A$ is a subset of $B$, $x in A$ and $x in B$ are both true by definition, making the broader statement true as well.],
+    [$forall x in U, x in A and x in B.$ Not equivalent, this is the definition of intersection, $inter$.],
+    [$forall x in U, x in.not B arrow.r x in.not A.$ Equivalent due to contrapositive, since $A$ is a subset of $B$, if an element does not exist within $B$ then we must conclude that it does not also exist within $A$.],
+    [$exists x in U | x in A and x in B.$ Not equivalent, as for $subset.eq$ this must apply $forall x$. ],
     [$forall x in U, x in A arrow.r x in B.$ True by definition, since $A$ is a subset of $B$, if $x in A$ it must follow $x in B$ by definition.],
     [$forall x in U, x in.not A arrow.r x in.not B.$ False, let $A={1,2,3}$ and $B=ZZ$. $4 in B and 4 in.not A$ even though $A subset.eq B$.],
   )
@@ -240,7 +240,7 @@ We want to show $x in (A-B) inter (A-C)$. \
 By assumption: $x in A and (x in.not B and x in.not C)$ using De Morgan's Law. \
 By distributive property, rewrite our assumption as $(x in A and x in.not B) and (x in A and x in.not C)$. \
 And going back using the definition of complement and intersection: $(A - B) inter (A-C)$. \
-Since every step in the proof was biconditional, our argument works in both direction of proving the equality of the sets. \
+Since every step in the proof was biconditional due to the logical equivalence of the sets, our argument works in both direction of proving the equality of the sets. \
 --- \ 
 Thus $A - (B union C) = (A -B) inter (A-C)$. $qed$
 ]
