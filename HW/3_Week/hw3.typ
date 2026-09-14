@@ -8,8 +8,7 @@
       #set text(size: 9pt, fill: rgb("#666666"))
       #grid(
         columns: (1fr, 1fr),
-        align(left)[Imran Qasimi],
-        align(right)[Math 2031 --- Homework 3],
+        align(left)[Imran Qasimi], align(right)[Math 2031 --- Homework 3],
       )
       #line(length: 100%, stroke: 0.4pt + rgb("#cccccc"))
     ]
@@ -38,8 +37,7 @@
   v(0.3em)
   grid(
     columns: (1fr, 1fr),
-    align(left)[*Name:* #name],
-    align(right)[*Date:* #date],
+    align(left)[*Name:* #name], align(right)[*Date:* #date],
   )
   v(0.3em)
   line(length: 100%, stroke: 0.7pt)
@@ -91,11 +89,14 @@
 
 
 #question("1C")[
-  #given("Statement",[$1^3 + 2^3 + 3^3 + ... + n^3 = frac(n^2(n+1)^2, 4), n in NN$])
+  #given(
+    "Statement",
+    [$1^3 + 2^3 + 3^3 + ... + n^3 = frac(n^2(n+1)^2, 4), n in NN$],
+  )
   = Proof by Induction:
   == Base Case: $k = 1, k in NN$
   LHS: $1^3 = 1$ \
-  RHS: $frac(1^2(1+1)^2,4) = frac(4,4) = 1$ \
+  RHS: $frac(1^2(1+1)^2, 4) = frac(4, 4) = 1$ \
   Since LHS = RHS, the base case is true.
   == Induction Step:
   Assume $1^3 + 2^3 + 3^3 + ... + k^3 = frac(k^2(k+2)^2, 4)$ is true for $k$. \
@@ -107,94 +108,103 @@
   Replace: \
   $frac(k^2(k+1)^2, 4) + (k+1)^3 = frac((k+1)^2(k+2)^2, 4)$ \
   Factor $(k+1)^2$ from the LHS: \
-  $(k+1)^2(frac(k^2,4) + k+1) = frac((k+1)^2(k+2)^2, 4)$ \
-  Divide both sides by $(k+1)^2$, which is greater than $0$. \ 
-  $frac(k^2,4) + k+1 = frac((k+2)^2, 4)$ \
+  $(k+1)^2(frac(k^2, 4) + k+1) = frac((k+1)^2(k+2)^2, 4)$ \
+  Divide both sides by $(k+1)^2$, which is greater than $0$. \
+  $frac(k^2, 4) + k+1 = frac((k+2)^2, 4)$ \
   Expanding the LHS we get: \
-  $frac(k^2,4) + k+1 = frac(k^2,4) + k + 1$ \
+  $frac(k^2, 4) + k+1 = frac(k^2, 4) + k + 1$ \
   --- \
   $therefore forall n in NN,1^3 + 2^3 + 3^3 + ... + n^3 = frac(n^2(n+1)^2, 4)$ \
   $qed$
 ]
 
 #question("2A")[
-  #given("Statement",[$1^2 + 3^2 + 5^2 + ... + (2n-1)^2 = frac((2n-1)(2n)(2n+1),6), n in NN$])
+  #given(
+    "Statement",
+    [$1^2 + 3^2 + 5^2 + ... + (2n-1)^2 = frac((2n-1)(2n)(2n+1), 6), n in NN$],
+  )
   = Proof by Induction:
   == Base Case: $k = 1, k in NN$
   LHS: $(2(1)-1)^2 = 1^2 = 1$ \
-  RHS: $frac((2(1)-1)(2(1))(2(1)+1),6) = frac(1 dot 2 dot 3,6) = 6/6 = 1$ \ 
+  RHS: $frac((2(1)-1)(2(1))(2(1)+1), 6) = frac(1 dot 2 dot 3, 6) = 6/6 = 1$ \
   Since LHS = RHS, the base case is true.
   == Induction Step:
-  Assume $1^2 + 3^2 + 5^2 + ... + (2k-1)^2 = frac((2k-1)(2k)(2k+1),6)$ is true for $k$. \
+  Assume $1^2 + 3^2 + 5^2 + ... + (2k-1)^2 = frac((2k-1)(2k)(2k+1), 6)$ is true for $k$. \
   We want to show it is also true for $k+1$ by showing that the LHS=RHS. \
   Substituting $k+1$ into our equation: \
-  $1^2 + 3^2 + 5^2 + ... + (2k-1)^2 + (2k+1)^2 = frac((2k+1)(2k+2)(2k+3),6)$ is true for $k$. \
+  $1^2 + 3^2 + 5^2 + ... + (2k-1)^2 + (2k+1)^2 = frac((2k+1)(2k+2)(2k+3), 6)$ is true for $k$. \
   Note our IH: \
-  $underbrace(1^2 + 3^2 + 5^2 + ... + (2k-1)^2, "Inductive Hypothesis.") + (2k+1)^2 = frac((2k+1)(2k+2)(2k+3),6)$. \
+  $underbrace(1^2 + 3^2 + 5^2 + ... + (2k-1)^2, "Inductive Hypothesis.") + (2k+1)^2 = frac((2k+1)(2k+2)(2k+3), 6)$. \
   Substitute: \
-  $frac((2k-1)(2k)(2k+1),6) + (2k+1)^2 = frac((2k+1)(2k+2)(2k+3),6)$ \
+  $frac((2k-1)(2k)(2k+1), 6) + (2k+1)^2 = frac((2k+1)(2k+2)(2k+3), 6)$ \
   Factoring a $(2k+1)$ on both sides: \
-  $(2k+1) dot (frac((2k-1)(2k),6) + (2k+1)) = (2k+1) dot frac((2k+2)(2k+3),6)$ \
+  $(2k+1) dot (frac((2k-1)(2k), 6) + (2k+1)) = (2k+1) dot frac((2k+2)(2k+3), 6)$ \
   Canceling the $(2k+1)$, it is greater than $0$. \
-  $frac((2k-1)(2k),6) + (2k+1) = frac((2k+2)(2k+3),6)$ \ 
+  $frac((2k-1)(2k), 6) + (2k+1) = frac((2k+2)(2k+3), 6)$ \
   Expanding both sides: \
   $frac(4k^2 + 10k + 6, 6) = frac(4k^2 + 10k + 6, 6)$ \
   --- \
-  $therefore forall n in NN, 1^2 + 3^2 + 5^2 + ... + (2n-1)^2 = frac((2n-1)(2n)(2n+1),6)$ \
+  $therefore forall n in NN, 1^2 + 3^2 + 5^2 + ... + (2n-1)^2 = frac((2n-1)(2n)(2n+1), 6)$ \
   $qed$
 ]
 
 #question("3")[
-  #given("Statement", [For any real number $a$ except 1, $1 + a + a^2 + a^3 + ... + a^(n) = frac((a^(n+1)-1),a-1)$])
+  #given(
+    "Statement",
+    [For any real number $a$ except 1, $1 + a + a^2 + a^3 + ... + a^(n) = frac((a^(n+1)-1), a-1)$],
+  )
   = Proof by Induction:
   == Base Case: $k = 1, k in NN$
-  LHS: $1 + a^(1) = a + 1 $ \ 
+  LHS: $1 + a^(1) = a + 1$ \
   RHS: $frac(a^(1+1)-1, a-1) = frac(a^2 -1, 1) = frac((a+1)(a-1), (a-1)) = a+1$ \
-  Since the LHS = RHS, the base case is true. \ 
+  Since the LHS = RHS, the base case is true. \
   == Induction Step:
-  Assume $1 + a + a^2 + a^3 + ... + a^(k) = frac((a^(k+1)-1),a-1)$ is true for $k$. \
+  Assume $1 + a + a^2 + a^3 + ... + a^(k) = frac((a^(k+1)-1), a-1)$ is true for $k$. \
   We want to show that it is also true for $k+1$ by showing that the LHS=RHS. \
   Substitute $(k+1)$ into equation: \
-  $underbrace(1 + a + a^2 + a^3 + ... + a^(k),"Induction Hypothesis.") + a^(k+1) = frac((a^(k+2)-1),a-1)$. \
+  $underbrace(1 + a + a^2 + a^3 + ... + a^(k), "Induction Hypothesis.") + a^(k+1) = frac((a^(k+2)-1), a-1)$. \
   Substitute the IH: \
-  $frac((a^(k+1)-1),a-1) + a^(k+1) = frac((a^(k+2)-1),a-1)$. \
+  $frac((a^(k+1)-1), a-1) + a^(k+1) = frac((a^(k+2)-1), a-1)$. \
   Combining the terms on our LHS: \
-  $frac(a^(k+1)-1 + a^(k+2) - a^(k+1),a-1) = frac((a^(k+2)-1),a-1)$. \
+  $frac(a^(k+1)-1 + a^(k+2) - a^(k+1), a-1) = frac((a^(k+2)-1), a-1)$. \
   Canceling like terms and rearranging terms: \
-  $frac((a^(k+2)-1),a-1) = frac((a^(k+2)-1),a-1)$ \
+  $frac((a^(k+2)-1), a-1) = frac((a^(k+2)-1), a-1)$ \
   --- \
-  $therefore forall n in NN$ and $forall a in RR:( 1 + a + a^2 + a^3 + ... + a^(n) = frac((a^(n+1)-1),a-1))$ \
+  $therefore forall n in NN$ and $forall a in RR:( 1 + a + a^2 + a^3 + ... + a^(n) = frac((a^(n+1)-1), a-1))$ \
   $qed$
 
 ]
 #question("8")[
-  #given("Statement", ["The Fibonnaci numbers $f_n, n = 1,2,3,...$ are defined recursively by the formulas $f_1=1,f_2=1,f_n=f_(n-1)
-+ f_(n-2)$ for all $n >= 3$."])
-#parts(
-  [$f_1 = 1, f_2 = 1, f_3=2, f_4=3,f_5=5,f_6=8,f_7=13,f_8=21,f_9=34,f_(10)=55$],
-  [$f_1 + f_2 = 2, f_1 + f_2 + f_3 = 4, f_1 + f_2 + f_3 + f_4 = 7$],
-  [#given("Statement",[$f_1 + f_2 + f_3 + ... + f_n=f_(n+2)-1, n >= 3$])
-  = Proof by Induction:
-  == Base Case: $k = 3$
-  LHS: $1 + 1 + 2 = 4$ \
-  RHS: $f_5 - 1 = 5 - 1 = 4$ \
-  Since the LHS=RHS, the statement is true for $k=3$.
-  == Induction Step:
-  Let the equation $f_1 + f_2 + f_3 + ... + f_k=f_(k+2)-1, k >= 3$ be true for $k$. \
-  We want to show the statement is true for $(k+1)$ by demonstrating the LHS=RHS. \
-  Substituting $(k+1)$: \
-  $underbrace(f_1 + f_2 + f_3 + ... + f_k, "Induction Hypothesis.") + f_(k+1)=f_(k+3)-1$ \
-  Replace the IH: \
-  $f_(k+2) - 1 + f_(k+1) = f_k(+3) - 1$. \
-  Add $1$ to both sides: \
-  $f_(k+2) + f_(k+1) = f_(k+3)$ \
-  By the definition of the Fibonacci sequence: \ 
-  $f_(k+3)$ = $f_(k+2) + f_(k+1)$ \
-  Thus: \ 
-  $f_(k+2) + f_(k+1) = f_(k+2) + f_(k+1)$ \
-  --- \
-  $therefore f_1 + f_2 + f_3 + ... + f_n=f_(n+2)-1, n >= 3$ \
-  $qed$
-],
-)
+  #given(
+    "Statement",
+    ["The Fibonnaci numbers $f_n, n = 1,2,3,...$ are defined recursively by the formulas $f_1=1,f_2=1,f_n=f_(n-1)
+      + f_(n-2)$ for all $n >= 3$."],
+  )
+  #parts(
+    [$f_1 = 1, f_2 = 1, f_3=2, f_4=3,f_5=5,f_6=8,f_7=13,f_8=21,f_9=34,f_(10)=55$],
+    [$f_1 + f_2 = 2, f_1 + f_2 + f_3 = 4, f_1 + f_2 + f_3 + f_4 = 7$],
+    [#given("Statement", [$f_1 + f_2 + f_3 + ... + f_n=f_(n+2)-1, n >= 3$])
+      = Proof by Induction:
+      == Base Case: $k = 3$
+      LHS: $1 + 1 + 2 = 4$ \
+      RHS: $f_5 - 1 = 5 - 1 = 4$ \
+      Since the LHS=RHS, the statement is true for $k=3$.
+      == Induction Step:
+      Let the equation $f_1 + f_2 + f_3 + ... + f_k=f_(k+2)-1, k >= 3$ be true for $k$. \
+      We want to show the statement is true for $(k+1)$ by demonstrating the LHS=RHS. \
+      Substituting $(k+1)$: \
+      $underbrace(f_1 + f_2 + f_3 + ... + f_k, "Induction Hypothesis.") + f_(k+1)=f_(k+3)-1$ \
+      Replace the IH: \
+      $f_(k+2) - 1 + f_(k+1) = f_k(+3) - 1$. \
+      Add $1$ to both sides: \
+      $f_(k+2) + f_(k+1) = f_(k+3)$ \
+      By the definition of the Fibonacci sequence: \
+      $f_(k+3)$ = $f_(k+2) + f_(k+1)$ \
+      Thus: \
+      $f_(k+2) + f_(k+1) = f_(k+2) + f_(k+1)$ \
+      --- \
+      $therefore f_1 + f_2 + f_3 + ... + f_n=f_(n+2)-1, n >= 3$ \
+      $qed$
+    ],
+  )
 ]

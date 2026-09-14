@@ -8,8 +8,7 @@
       #set text(size: 9pt, fill: rgb("#666666"))
       #grid(
         columns: (1fr, 1fr),
-        align(left)[Imran Qasimi],
-        align(right)[Math 2031 --- Homework 1],
+        align(left)[Imran Qasimi], align(right)[Math 2031 --- Homework 1],
       )
       #line(length: 100%, stroke: 0.4pt + rgb("#cccccc"))
     ]
@@ -38,8 +37,7 @@
   v(0.3em)
   grid(
     columns: (1fr, 1fr),
-    align(left)[*Name:* #name],
-    align(right)[*Date:* #date],
+    align(left)[*Name:* #name], align(right)[*Date:* #date],
   )
   v(0.3em)
   line(length: 100%, stroke: 0.7pt)
@@ -132,12 +130,15 @@
     [$exists n in ZZ$ such that $forall k in ZZ$, $n != 2k and n != 2k + 1$.],
     [$forall r in RR$, $r<=1 and r>=2$.],
     [$forall r in RR$, $r$ is less than or equal to 2 and greater than or equal to 1.],
-    [All functions are differentiable at 0 and continuous at 0.]
+    [All functions are differentiable at 0 and continuous at 0.],
   )
 ]
 
 #question("6")[
-  #given("Conjecture", [Every multiple of 6 is even and is not a multiple of 4.])
+  #given(
+    "Conjecture",
+    [Every multiple of 6 is even and is not a multiple of 4.],
+  )
   #v(0.6em)
   #parts(
     [$forall n=6a | n = 2k and n != 4b$. ${n, a, k, b in ZZ}$.],
@@ -150,19 +151,22 @@
 #question("1")[
   #parts(
     [P : $forall$ Hexagons $H$, $H$ has $6$ sides. \ $~P$ : $exists H$ | $H$ does not have $6$ sides.],
-    [P : $forall n,a,b in ZZ$ $n = 2a or n = 2b + 1 $ . \ $~P$ : $exists n,a,b in ZZ$ | $n != 2a and n != 2b + 1$.],
+    [P : $forall n,a,b in ZZ$ $n = 2a or n = 2b + 1$ . \ $~P$ : $exists n,a,b in ZZ$ | $n != 2a and n != 2b + 1$.],
     [P : $forall f$ that is differentiable at 0, $f$ is continuous at 0. \ $~P$ : $exists f$ that is differentiable at 0 such that $f$ is not continuous at 0.],
-    [P : $forall x in RR$, $exists y in RR$ such that $sqrt(x) = y$. \ $~P$ : $exists x in RR$ such that $forall y in RR$, $sqrt(x) != y$]
+    [P : $forall x in RR$, $exists y in RR$ such that $sqrt(x) = y$. \ $~P$ : $exists x in RR$ such that $forall y in RR$, $sqrt(x) != y$],
   )
 ]
 
 #question("7")[
-  #given("Conjecture", [The sum of the squares of three consecutive integers is even.])
+  #given(
+    "Conjecture",
+    [The sum of the squares of three consecutive integers is even.],
+  )
   #v(0.6em)
   #parts(
     [$forall x, a in ZZ$, $x^2 + (x+1)^2 + (x+2)^2 = 2a$. ${a, x in ZZ}$.],
     [$exists x, a in ZZ$ | $x^2 + (x+1)^2 + (x+2)^2 != 2a$. ${a, x in ZZ}$.],
-    [Counter-example: Let $x=0 therefore$ $0^2 + 1^2 + 2^2 = 5$, $5 != 2a$.]
+    [Counter-example: Let $x=0 therefore$ $0^2 + 1^2 + 2^2 = 5$, $5 != 2a$.],
   )
 ]
 
@@ -171,11 +175,11 @@
 #question("4")[
   #parts(
     [*Contrapositive*: If the food didn't spoil, then the power did not go off. \
-     *Converse*: If the food spoils, then the power went off. ],
+      *Converse*: If the food spoils, then the power went off. ],
     [*Contrapositive*: If the door is locked, then the light is not on. \
-     *Converse*: If the door is not locked, then the light is on. ],
+      *Converse*: If the door is not locked, then the light is on. ],
     [*Contrapositive*: If we didn't start the test, then it is not 9 A.M. \
-     *Converse*: If we started the test, then it is 9 A.M. ],
+      *Converse*: If we started the test, then it is 9 A.M. ],
   )
 ]
 
@@ -184,15 +188,18 @@
   #v(0.6em)
   #parts(
     [*Contrapositive*: If $(x != -1 and x != 2) arrow.r x^2 - x - 2 != 0$. \
-     *Converse*: If $(x = 1 or x = 2) arrow.r x^2 - x - 2 = 0$.],
+      *Converse*: If $(x = 1 or x = 2) arrow.r x^2 - x - 2 = 0$.],
   )
 ]
 
 #question("7")[
-  #given("Statement", [ If $f$ is differentiable at $0$, then $f$ is continuous at $0$.])
+  #given(
+    "Statement",
+    [ If $f$ is differentiable at $0$, then $f$ is continuous at $0$.],
+  )
   #v(0.6em)
   #parts(
     [*Contrapositive*: If $f$ is not continuous at 0, then $f$ is not differentiable at $0$. \
-     *Converse*: If $f$ is continuous at $0$, then $f$ is differentiable at $0$. ],
+      *Converse*: If $f$ is continuous at $0$, then $f$ is differentiable at $0$. ],
   )
 ]
