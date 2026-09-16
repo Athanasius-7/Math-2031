@@ -185,11 +185,15 @@
     [$f_1 + f_2 = 2, f_1 + f_2 + f_3 = 4, f_1 + f_2 + f_3 + f_4 = 7$],
     [#given("Statement", [$f_1 + f_2 + f_3 + ... + f_n=f_(n+2)-1, n >= 3$])
       = Proof by Induction:
-      == Base Case: $k = 3$
-      LHS: $1 + 1 + 2 = 4$ \
-      RHS: $f_5 - 1 = 5 - 1 = 4$ \
-      Since the LHS=RHS, the statement is true for $k=3$.
-      == Induction Step:
+      == Base Cases: $n = 1$
+      LHS: $f_1=1$ \
+      RHS: $f_3 - 1 = 2 - 1 = 1$ \
+      Since the LHS=RHS, the statement is true for $n=1$.
+      == Base Cases: $n = 2$
+      LHS: $f_1 + f_2=1 + 1=2$ \
+      RHS: $f_4 - 1 = 3 - 1 = 2$ \
+      Since the LHS=RHS, the statement is true for $n=2$.
+      == Induction Step: Fix for $k>=3$
       Let the equation $f_1 + f_2 + f_3 + ... + f_k=f_(k+2)-1, k >= 3$ be true for $k$. \
       We want to show the statement is true for $(k+1)$ by demonstrating the LHS=RHS. \
       Substituting $(k+1)$: \
@@ -208,3 +212,50 @@
     ],
   )
 ]
+
+= Additional Problems:
+
+#question("1")[
+  #given("Statement", [Prove that for every natural number $n$, $3^n>=1+2^n$])
+  = Proof by Induction: 
+  == Base Case: $k=1$
+  LHS = $3^1 = 3$ \
+  RHS = $1+2^1 = 1 + 2=3$ \
+  Since the LHS$>=$RHS the statement is true for $k=1$. \ 
+  == Induction Step:
+  Let the statement $3^k>=2^k+1$ be true for $k$. \
+  We want to prove the statement is true for $(k+1)$ by showing that the LHS$>=$RHS. \
+  Substituting: \
+  $3^(k+1)>=2^(k+1)+1$ \
+  Rewrite: \
+  $3 dot underbrace(3^(k), "Inductive Hypothesis.") >=2 dot 2^(k)+1$ \
+  Replace with IH: \
+  $3 dot (2^(k)+1) >=2 dot 2^(k)+1$ \
+  Simplify further: \
+  $3 dot 2^(k) + 3 >=2 dot 2^(k)+1$ \
+  Subtract $1$ from both sides: \
+  $3 dot 2^(k) + 2 >=2 dot 2^(k)$ \
+  Finalize: \
+  $3 dot 2^(k+1)>=2^(k+1)$ \
+  --- \
+  $therefore forall n, 3^n>= 1+ 2^n$ since we have shown that the LHS$>=$RHS. \
+  $qed$
+
+]
+
+#question("2")[
+  #given("Statement", [Prove that for every number natural number $n$, $n^3 + 5n + 6$ is divisible by 3.])
+  = Proof by Induction:
+  == Base Case: $k=1$
+  We want to show that our result is an integer multiple of $3$. \
+  $1^3 + 5(1) + 6 = 6 + 6 = 12$ \
+  $12 = 4(3)$ \
+  $therefore$ the statement is true for $k=1$.
+  == Induction Step:
+  Let the statement $k^3 + 5k + 6$ be true for $k$. \
+  We want to show also that it is true for $(k+1)$. \
+
+
+
+]
+
