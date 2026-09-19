@@ -185,29 +185,29 @@
     [$f_1 + f_2 = 2, f_1 + f_2 + f_3 = 4, f_1 + f_2 + f_3 + f_4 = 7$],
     [#given("Statement", [$f_1 + f_2 + f_3 + ... + f_n=f_(n+2)-1, n >= 3$])
       = Proof by Induction:
-      == Base Cases: $n = 1$
+      == Base Cases: $i = 1$
       LHS: $f_1=1$ \
       RHS: $f_3 - 1 = 2 - 1 = 1$ \
-      Since the LHS=RHS, the statement is true for $n=1$.
-      == Base Cases: $n = 2$
+      Since the LHS=RHS, the statement is true for $i=1$.
+      == Base Cases: $i = 2$
       LHS: $f_1 + f_2=1 + 1=2$ \
       RHS: $f_4 - 1 = 3 - 1 = 2$ \
-      Since the LHS=RHS, the statement is true for $n=2$.
-      == Induction Step: Fix for $k>=3$
-      Let the equation $f_1 + f_2 + f_3 + ... + f_k=f_(k+2)-1, k >= 3$ be true for $k$. \
-      We want to show the statement is true for $(k+1)$ by demonstrating the LHS=RHS. \
-      Substituting $(k+1)$: \
-      $underbrace(f_1 + f_2 + f_3 + ... + f_k, "Induction Hypothesis.") + f_(k+1)=f_(k+3)-1$ \
-      Replace the IH: \
-      $f_(k+2) - 1 + f_(k+1) = f_k(+3) - 1$. \
+      Since the LHS=RHS, the statement is true for $i=2$.
+      == Induction Step: Fix for $k>3$
+      Let the equation $f_1 + f_2 + f_3 + ... + f_i=f_(i+2)-1$ be true for $1<=i<k$. \
+      We want to show the statement is true for $(k)$ by demonstrating the LHS=RHS. \
+      Substituting $(k)$: \
+      $underbrace(f_1 + f_2 + f_3 + ... + f_(k-1), "Induction Hypothesis.") + f_(k)=f_(k+2)-1$ \
+      Replace the IH as $k-1$ is within our assumption range: \
+      $f_(k+1) - 1 + f_(k) = f_(k+2) - 1$. \
       Add $1$ to both sides: \
-      $f_(k+2) + f_(k+1) = f_(k+3)$ \
+      $f_(k+1) + f_(k) = f_(k+2)$ \
       By the definition of the Fibonacci sequence: \
-      $f_(k+3)$ = $f_(k+2) + f_(k+1)$ \
+      $f_(k+2)$ = $f_(k+1) + f_(k)$ \
       Thus: \
-      $f_(k+2) + f_(k+1) = f_(k+2) + f_(k+1)$ \
+      $f_(k+1) + f_(k) = f_(k+1) + f_(k)$ \
       --- \
-      $therefore f_1 + f_2 + f_3 + ... + f_n=f_(n+2)-1, n >= 3$ \
+      $therefore f_1 + f_2 + f_3 + ... + f_(n)=f_(n+2)-1, n >= 3$ \
       $qed$
     ],
   )
@@ -252,10 +252,69 @@
   $12 = 4(3)$ \
   $therefore$ the statement is true for $k=1$.
   == Induction Step:
-  Let the statement $k^3 + 5k + 6$ be true for $k$. \
-  We want to show also that it is true for $(k+1)$. \
+  Let the statement $k^3 + 5k + 6 = 3b$ be true for $k$, where $k$ and $b$ are integers. \
+  We want to show that the statement is true for $(k+1)$ by showing it is also divisible by 3. \
+  Substituting LHS: \
+  $(k+1)^3 + 5(k+1) + 6$ \
+  Expanding further: \
+  $k^3 + 3k^2 + 3k + 1 + 5k + 5 + 6$ \
+  Simplifying: \
+  $underbrace(k^3 + 5k + 6, "Inductive Hypothesis") + 3k^2 + 3k + 6$ \
+  Replace the IH: \
+  $3b + 3k^2 + 3k + 6$ \
+  Factor a $3$: \
+  $3(b + k^2 + k + 2)$ \
+  Since $(k+1)^3 + 5(k+1) + 6$ is an integer multiple of $3$, it must also mean it is divisible by $3$. \
+  --- \
+  $therefore forall n in NN, n^3 + 5n +6$ is divisible by $3$. \ 
+  $qed$
+]
 
+#question("3")[
+  #given("Statement", [Let $a_1 = 2, a_2 = 4$ and $a_n=5a_(n-1) - 6a_(n-2)$, for $n>=3$. \ 
+  Prove that for every natural number $n$, $a_n = 2^n$.])
+  = Proof by Induction: 
+  == Base Cases: $i=1$
+  LHS: $a_1 = 2$
+  RHS: $2^1 = 2$
+  Since the LHS=RHS the statement is true for $i = 1$.
+  == Base Cases: $i=2$
+  LHS: $a_2 = 4$
+  RHS: $2^2 = 4$
+  Since the LHS=RHS the statement is true for $i = 2$.
+  == Induction Step:
+  Assume the statement $a_n = 2^n$ for the above defined sequence is true for $1<=i<k$, fix $k>3$. \
+  We want to show that the statement is true for $a_k = 2^k$ as well by showing the LHS=RHS. \
+  By definition: \
+  $a_k = 5a_(k-1) - 6a_(k-2)$ \
+  Note here that $(k-1)$ and $(k-2)$ both fall within our assumption range above, thus: \
+  $a_(k-1) = 2^(k-1)$ and $a_(k-2) = 2^(k-2)$ \
+  Rewriting our expression: \
+  $5(2^(k-1)) - 6(2^(k-2))= 2^(k)$ \
+  Note here that $6 = 3 dot 2$ thus we can rewrite as: \
+  $5(2^(k-1)) - 3(2^(k-1))= 2^(k)$ \
+  Factor out a $2^(k-1)$: \
+  $2^(k-1)(5-3)= 2^(k)$ \
+  Simplify: \
+  $2^(k-1)(2)= 2^(k)$ \
+  Finally: \
+  $2^(k) = 2^(k)$ \
+  --- \
+  $therefore$ for the sequence above, $forall n in NN, a_n = 2^n$. \
+  $qed$
 
 
 ]
 
+#question("4")[
+#figure(
+  image("media/babies_problem.png", width: 50%),
+  caption: [
+    Babies Problem
+  ],
+)
+The main issue with this proof lies in the fact that it makes use of strong-form induction in its argumentation whilst
+using the logic of a regular induction proof. Note how the author uses the left side of the set $L$ in order to accommodate 
+for the end, however the base case only allows us to assume $n$ is true, not for a range of babies in $L$.
+
+]
